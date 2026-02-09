@@ -4,5 +4,5 @@
 /**
  * 
  */
-module FirstProject {
+module CS1050M02 {
 }
