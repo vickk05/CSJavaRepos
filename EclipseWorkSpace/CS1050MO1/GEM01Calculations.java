@@ -9,7 +9,7 @@ public class GEM01Calculations
 {
 
 	public static void main(String[] args) 
-	{	// Our constants store info that stays the same while program run
+	{	// Our constants store info that stays the same while program runs.
 		final double class_participation = 0.15;
 		final double guided_exploration = 0.20;
 		final double quizzes = 0.25;
@@ -39,6 +39,6 @@ System.out.println("Final grade: " + finalgrade);
 		
 		
 		
-	}//main
+	}// End of main
 
 }//Class GE01
