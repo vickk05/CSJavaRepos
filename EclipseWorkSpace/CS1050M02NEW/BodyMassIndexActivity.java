@@ -22,12 +22,6 @@ public class BodyMassIndexActivity {
 		double height;
 		
 		
-		// constants
-		 // factor formula in pounds
-		// Variables
-		// The user's weight
-		// The user's height
-		 // The user's BMI
 		// Create a Scanner object for scanning input from the keyboard.
 		Scanner keyboard = new Scanner(System.in);
 		// Tell the user what the program will do.
@@ -45,18 +39,18 @@ public class BodyMassIndexActivity {
 		bmi = weight * BMI_US_FACTOR / (height * height);
 
 		// Display the user's BMI.
-		System.out.printf("Your body mass index (BMI) is %f", bmi);
-		if (bmi <= 18.5) {
-		System.out.println(" Underweight");
+		System.out.printf("Your body mass index (BMI) is %.2f", bmi);
+		if (bmi < 18.5) {
+		System.out.println("\nYour category: Underweight");
 		}
-		else if (bmi <= 25) {
-		System.out.println(" Normal");
+		else if (bmi < 25) {
+		System.out.println("\nYour category: Normal");
 		}
-		else if (bmi <= 30) {
-		System.out.println(" Overweight");
+		else if (bmi < 30) {
+		System.out.println("\nYour category: Overweight");
 		}
 		else {
-		System.out.println(" Obese");
+		System.out.println("\nYour category: Obese");
 		}
 		
 		
