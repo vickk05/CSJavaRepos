@@ -46,7 +46,7 @@ public class BodyMassIndexActivity {
 		else if (bmi < 25) {
 		System.out.println("\nYour category: Normal");
 		}
-		else if (bmi < 30) {
+		else if (bmi < 230) {
 		System.out.println("\nYour category: Overweight");
 		}
 		else {
