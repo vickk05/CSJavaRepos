@@ -47,7 +47,11 @@ public class Project02Trainer
 
 		System.out.println("\nEnd of program");
 	}
-
+	/**
+	 * reads athlete data from a file and adds them to the team
+	 * @param fileName file being read
+	 * @param team team that stores athletes
+	 */
 	public static void teamSetUp(String fileName, Team team) throws FileNotFoundException
 	{
 		File file = new File(fileName);
@@ -70,7 +74,10 @@ public class Project02Trainer
 
 		inputFile.close();
 	}
-
+	/**
+	 * runs all calculations for the team and prints results
+	 * @param team the team being analyzed
+	 */
 	public static void runAnalysis(Team team) throws FileNotFoundException
 	{
 		System.out.println("\n========== Team Analysis ==========");
@@ -131,12 +138,16 @@ class Athlete
 	{
 		return height;
 	}
-
+	/**
+	 * calculates bmi of the athlete
+	 */
 	public double calculateBMI()
 	{
 		return (weight * 703) / (height * height);
 	}
-
+	/**
+	 * returns bmi category of the athlete
+	 */
 	public String getBMICategory()
 	{
 		double bmi = calculateBMI();
@@ -181,7 +192,11 @@ class Team
 	{
 		return count;
 	}
-
+	/**
+	 * adds an athlete to the team if there is space
+	 * @param athlete athlete being added
+	 * @return true if added, false if team is full
+	 */
 	public boolean addAthlete(Athlete athlete)
 	{
 		if (count >= athletes.length)
@@ -228,7 +243,9 @@ class Team
 			}
 		}
 	}
-
+	/**
+	 * calculates average max heart rate of the team
+	 */
 	public double calculateAverageMaxHeartRate()
 	{
 		double total = 0;
@@ -293,7 +310,10 @@ class Team
 
 		System.out.println("Tallest Athlete:");
 		System.out.println(tallest.getName() + " - " + tallest.getHeight());	}
-
+	/**
+	 * writes all athlete results to an output file
+	 * @param fileName name of the file being written
+	 */
 	public void writeAthletesToFile(String fileName) throws FileNotFoundException
 	{
 		PrintWriter output = new PrintWriter(fileName);
