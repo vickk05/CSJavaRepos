@@ -14,7 +14,7 @@ public class LabL15ArraysIntro {
 	// Declare and construct
     double[] finalGrades = new double[size];
 	String[] firstNames = new String[size];
-	/
+	//
 	// Updated, replaced loop with method call
 	fillArrays(input, firstNames, finalGrades);
 	
