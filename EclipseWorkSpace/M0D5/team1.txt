@@ -1,6 +1,0 @@
-Victor 200 55 50
-Mateo 230 75 35
-Deb 190 65 40
-Robert 130 60 20
-Kevin 190 60 19
-Tatum 200 65 20
