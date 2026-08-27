@@ -52,7 +52,7 @@ public class Project02Trainer
 	 * @param fileName file being read
 	 * @param team team that stores athletes
 	 */
-	public static void teamSetUp(String fileName, Team team) throws FileNotFoundException
+    public static void teamSetUp(String fileName, Team team) throws FileNotFoundException
 	{
 		File file = new File(fileName);
 		Scanner inputFile = new Scanner(file);
@@ -151,15 +151,22 @@ class Athlete
 	public String getBMICategory()
 	{
 		double bmi = calculateBMI();
-
+	    String category = "";
+	    
 		if (bmi < 18.5)
-			return "Underweight";
-		else if (bmi < 25)
-			return "Normal";
+		{
+		    category = "Underweight";
+		}
 		else if (bmi < 30)
-			return "Overweight";
+		{
+		    category = "Normal";
+		}
 		else
-			return "High";
+		{
+		    category = "High";
+		}
+
+		return category;
 	}
 
 	public int calculateMHR()

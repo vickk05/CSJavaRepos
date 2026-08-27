@@ -1,0 +1,2 @@
+module MOD1 {
+}
