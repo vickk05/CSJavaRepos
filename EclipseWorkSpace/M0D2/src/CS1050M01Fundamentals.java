@@ -51,7 +51,8 @@ public class CS1050M01Fundamentals {
 	// All we do now is print the result of the final grade.
 		
 		System.out.println("\nStudent final grade: " + finalGrade);
-
+		System.out.print("TEST");
+		
 	// End of code.
 	}
 
