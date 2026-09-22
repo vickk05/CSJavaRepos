@@ -14,6 +14,7 @@ public class SubtractionQuiz {
       number2 = temp;
       System.out.println("temp value is " + temp);
 
+    }
    
 
  
