@@ -25,8 +25,7 @@ public class GradeCalculator
 		final double PROJECTS = .20;
 		final double FINAL_DEMO = .20;
 
-		// Now we display the course categories and their weight percentages. (This
-		// could be done in one print)
+		// Now we display the course categories and their weight percentages.
 		System.out.println("Welcome to the Course Grade Calculator!\n");
 
 		System.out.println("This program calculates your final course"
@@ -39,6 +38,11 @@ public class GradeCalculator
 		System.out.println("Projects: 20%");
 		System.out.println("Final Demonstration: 20%");
 
+		/*
+		 * We prompt the user to enter data. Based on the data to enter, we put the
+		 * corresponding data type. We have the user give the name, and their grade for
+		 * each category.
+		 */
 		System.out.print("\nEnter Student name:");
 		String studentName = KeyboardInput.nextLine();
 
@@ -57,11 +61,20 @@ public class GradeCalculator
 		System.out.print("Enter Final Demonstration Grade:");
 		double finalDemo = KeyboardInput.nextDouble();
 
+		// Print the student name that was inputed,
 		System.out.print("\nStudent:" + studentName);
 
+		/*
+		 * Final grade equation. We multiply the category weight based on what was
+		 * inputed as their grade for that category and add them all up at the end. You
+		 * will receive your grade percentage.
+		 */
 		double gradePercent = (studentCP * CLASS_PARTICIPATION) + (studentGE * GUIDED_EXPLORATION) + (quiz * QUIZ)
 				+ (project * PROJECTS) + (finalDemo * FINAL_DEMO);
 		System.out.print("\nFinal Course Grade:" + gradePercent + "%");
+
+		// Based on what grade percent you got, the condition that is met will print the
+		// letter grade.
 
 		if (gradePercent >= 90)
 		{
@@ -74,7 +87,8 @@ public class GradeCalculator
 			System.out.print("\nLetter Grade: C");
 		} else if (gradePercent >= 60)
 		{
-			System.out.print("\nLetter Grade: D");
+			Sys\tem.out.print("\nLetter Grade: D");
+			/
 		} else
 		{
 			System.out.print("\nLetter Grade: F");
@@ -83,4 +97,11 @@ public class GradeCalculator
 
 	}
 
+	}
+
+	for(
+
+	int num = 1;num<=3;num++)
+{
+    System.out.println(num);
 }
