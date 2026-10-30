@@ -20,6 +20,7 @@ public class ConcertTicket
 
 		/*
 		 * A multi-way if/else statement. This validates the input from the user,
+		 * depending on the condition thats met it will print out which section was
 		 * selected. If no condition is met, program ends.
 		 */
 
