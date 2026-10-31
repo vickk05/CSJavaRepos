@@ -18,7 +18,7 @@ public class AnimalRescue
 				+ "- Identify animals that eat at or above the average daily food amount\n"
 				+ "- Calculate the total amount of food needed for all animals for one week\n"
 				+ "The program displays each animal's information and a summary of the rescue's food needs.");
-		System.out.println("Hello world");
+
 		// Here we ask the user to enter the amount of animals for the array.
 		System.out.print("\nEnter the amount of animals: ");
 		int amountAnimals = Input.nextInt();
