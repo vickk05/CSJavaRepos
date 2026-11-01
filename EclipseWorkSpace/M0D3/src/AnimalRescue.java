@@ -90,8 +90,6 @@ public class AnimalRescue
 
 		}
 
-		rescueAnalysisSummary(verified, weeklyFood, dailyFood, nameDogs);
-
 	}// End of method
 
 	public static double validNum(Scanner Input, double number)
@@ -147,16 +145,16 @@ public class AnimalRescue
 		System.out.printf("Weekly Food Amount: %.2f cups\n\n\n", weeklyFood);
 	}
 
-	public static void rescueAnalysisSummary(int verified, double weeklyFood, double dailyFood, String nameDogs)
+	public static void rescueAnalysisSummary(int verified, double[] weeklyFood, double[] dailyFood, String[] nameDogs)
 	{
 		final int DAYS_WEEK = 7;
 		System.out.println("========== Rescue Analysis Summary ==========");
 		System.out.println("Number of animals: " + verified);
 
 		double adder = 0;
-		for (int i = 0; i < verified; i++)
+		for (int i = 0; i < weeklyFood.length; i++)
 		{
-			adder = adder + weeklyFood;
+			adder = adder + weeklyFood[i];
 		}
 		double totalWeeklyFood = adder;
 		System.out.printf("Total Weekly Food required: %.2f cups\n", totalWeeklyFood);
@@ -165,11 +163,11 @@ public class AnimalRescue
 		System.out.printf("Average Daily food per animal: %.2f  cups\n", averageDailyFood);
 
 		System.out.println("Animals At or Above Average Daily Food Amount:");
-		for (int i = 0; i < verified; i++)
+		for (int i = 0; i < weeklyFood.length; i++)
 		{
-			if (dailyFood >= averageDailyFood)
+			if (dailyFood[i] >= averageDailyFood)
 			{
-				System.out.printf("%s: %.2f cups\n", nameDogs, dailyFood);
+				System.out.printf("%s: %.2f cups\n", nameDogs[i], dailyFood[i]);
 			}
 
 		}
