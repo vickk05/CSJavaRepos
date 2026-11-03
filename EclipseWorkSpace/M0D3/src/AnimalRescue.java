@@ -152,15 +152,10 @@ public class AnimalRescue
 		System.out.println("========== Rescue Analysis Summary ==========");
 		System.out.println("Number of animals: " + verified);
 
-		double adder = 0;
-		for (int i = 0; i < weeklyFood.length; i++)
-		{
-			adder = adder + weeklyFood[i];
-		}
-		double totalWeeklyFood = adder;
-		System.out.printf("Total Weekly Food required: %.2f cups\n", totalWeeklyFood);
+		double totalFood = totalWeeklyFood(weeklyFood);
+		System.out.printf("Total Weekly Food required: %.2f cups\n", totalFood);
 
-		double averageDailyFood = totalWeeklyFood / DAYS_WEEK / verified;
+		double averageDailyFood = totalFood / DAYS_WEEK / verified;
 		System.out.printf("Average Daily food per animal: %.2f  cups\n", averageDailyFood);
 
 		System.out.println("Animals At or Above Average Daily Food Amount:");
@@ -173,5 +168,27 @@ public class AnimalRescue
 
 		}
 
+	}
+
+	public static double totalWeeklyFood(double[] weeklyFood)
+	{
+		double adder = 0;
+		for (int i = 0; i < weeklyFood.length; i++)
+		{
+			adder = adder + weeklyFood[i];
+		}
+		double totalFood = adder;
+		return totalFood;
+	}
+
+	public static void averageDailyFood(double[] dailyFood, double averageDailyFood)
+	{
+		for (int i = 0; i < dailyFood.length; i++)
+		{
+			if (dailyFood[i] >= averageDailyFood)
+			{
+				System.out.printf("%s: %.2f cups\n", nameDogs[i], dailyFood[i]);
+			}
+		}
 	}
 }// End of class
