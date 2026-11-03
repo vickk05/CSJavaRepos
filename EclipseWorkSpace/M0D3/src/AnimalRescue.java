@@ -31,7 +31,7 @@ public class AnimalRescue
 		 * Now that we have the number for how long the array will be, we verify and set
 		 * the size of the elements for the arrays.
 		 */
-		String[] nameDogs = new String[verified];
+		String[] animalName = new String[verified];
 		double[] weightLbs = new double[verified];
 		double[] dailyFood = new double[verified];
 		double[] weeklyFood = new double[verified];
@@ -39,10 +39,10 @@ public class AnimalRescue
 
 		// We will call a method to put down all the dog information into the arrays.
 
-		enterAnimalData(Input, nameDogs, weightLbs, dailyFood, weeklyFood, weightCategory);
+		enterAnimalData(Input, animalName, weightLbs, dailyFood, weeklyFood, weightCategory);
 
 		// We print the Analysis Summary.
-		rescueAnalysisSummary(verified, weeklyFood, nameDogs, dailyFood);
+		rescueAnalysisSummary(verified, weeklyFood, animalName, dailyFood);
 	}// End of main
 
 	// Verify amount of dogs for the data in the array.
@@ -60,18 +60,18 @@ public class AnimalRescue
 	}// End of method
 
 	// Get info and validate for animal name, weight, and daily food into arrays. #2
-	public static void enterAnimalData(Scanner Input, String[] nameDogs, double[] weightLbs, double[] dailyFood,
+	public static void enterAnimalData(Scanner Input, String[] animalName, double[] weightLbs, double[] dailyFood,
 			double[] weeklyFood, String[] weightCategory)
 	{
 		System.out.println("\nAnimal Entry");
 
 		// I used a for loop to run through however many times the user put.
-		for (int i = 0; i < nameDogs.length; i++)
+		for (int i = 0; i < animalName.length; i++)
 		{
 			System.out.println("========== Animal " + (i + 1) + " ==========");
 
 			System.out.print("\nEnter animal name: ");
-			nameDogs[i] = Input.next();
+			animalName[i] = Input.next();
 
 			// Get weight, and validate it to be a positive whole number.
 			System.out.print("Enter weight in pounds: ");
@@ -89,7 +89,7 @@ public class AnimalRescue
 
 			// We print the animal summary after getting all the information we need for
 			// that animal.
-			printSummary(nameDogs[i], weightLbs[i], weightCategory[i], dailyFood[i], weeklyFood[i]);
+			printSummary(animalName[i], weightLbs[i], weightCategory[i], dailyFood[i], weeklyFood[i]);
 
 		}
 
@@ -156,11 +156,11 @@ public class AnimalRescue
 	 * For enterAnimalData method. For each animal it will print a summary following
 	 * the correct parallel index.
 	 */
-	public static void printSummary(String nameDogs, double weightLbs, String weightCategory, double dailyFood,
+	public static void printSummary(String animalName, double weightLbs, String weightCategory, double dailyFood,
 			double weeklyFood)
 	{
 		System.out.println("---------- Animal Summary ----------");
-		System.out.println("Animal Name: " + nameDogs);
+		System.out.println("Animal Name: " + animalName);
 		System.out.printf("Weight: %.2f lbs\n", weightLbs);
 		System.out.println("Weight Category: " + weightCategory);
 		System.out.printf("Daily Food amount: %.2f cups\n", dailyFood);
@@ -172,7 +172,7 @@ public class AnimalRescue
 	 * displays the amount of animals, the total weekly food required, the average
 	 * daily food per animal, and animals at or above average for food amount.
 	 */
-	public static void rescueAnalysisSummary(int verified, double[] weeklyFood, String[] nameDogs, double[] dailyFood)
+	public static void rescueAnalysisSummary(int verified, double[] weeklyFood, String[] animalName, double[] dailyFood)
 	{
 		final int DAYS_WEEK = 7;
 		System.out.println("========== Rescue Analysis Summary ==========");
@@ -185,7 +185,7 @@ public class AnimalRescue
 		System.out.printf("Average Daily food per animal: %.2f  cups\n", averageDailyFood);
 
 		System.out.println("Animals At or Above Average Daily Food Amount:");
-		printAverageDailyFood(dailyFood, averageDailyFood, nameDogs);
+		printAverageDailyFood(dailyFood, averageDailyFood, animalName);
 
 	}// End of method
 
@@ -210,13 +210,13 @@ public class AnimalRescue
 	 * will run a for loop, to go through each animal. If the animal is at average
 	 * or higher, it will display the animal name and the animals daily food.
 	 */
-	public static void printAverageDailyFood(double[] dailyFood, double averageDailyFood, String[] nameDogs)
+	public static void printAverageDailyFood(double[] dailyFood, double averageDailyFood, String[] animalName)
 	{
 		for (int i = 0; i < dailyFood.length; i++)
 		{
 			if (dailyFood[i] >= averageDailyFood)
 			{
-				System.out.printf("%s: %.2f cups\n", nameDogs[i], dailyFood[i]);
+				System.out.printf("%s: %.2f cups\n", animalName[i], dailyFood[i]);
 			}
 		}
 	}// End of method
