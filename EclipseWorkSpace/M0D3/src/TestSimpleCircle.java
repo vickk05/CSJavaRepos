@@ -22,8 +22,16 @@ public class TestSimpleCircle
 
 		// Create 3 rectangle objects that prints area and perimeter (length, width)
 		Rectangle rectangle1 = new Rectangle(1, 1);
-		System.out.println("The area of rectangle1 is " + rectangle1.getArea());
+		System.out.println("\nThe area of rectangle1 is " + rectangle1.getArea());
 		System.out.println("The perimeter of rectangle1 is" + rectangle1.getPerimeter());
+
+		Rectangle rectangle2 = new Rectangle(5, 5);
+		System.out.println("The area of rectangle2 is " + rectangle2.getArea());
+		System.out.println("The perimeter of rectangle2 is " + rectangle2.getPerimeter());
+
+		Rectangle rectangle3 = new Rectangle(25, 25);
+		System.out.println("The area of rectangle3 is " + rectangle3.getArea());
+		System.out.println("The perimeter of rectangle3 is " + rectangle3.getPerimeter());
 
 	}
 }
