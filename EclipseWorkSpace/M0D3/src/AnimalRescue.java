@@ -34,15 +34,13 @@ public class AnimalRescue
 		String[] animalName = new String[verified];
 		double[] weightLbs = new double[verified];
 		double[] dailyFood = new double[verified];
-		double[] weeklyFood = new double[verified];
-		String[] weightCategory = new String[verified];
 
 		// We will call a method to put down all the dog information into the arrays.
 
-		enterAnimalData(Input, animalName, weightLbs, dailyFood, weeklyFood, weightCategory);
+		enterAnimalData(Input, animalName, weightLbs, dailyFood);
 
 		// We print the Analysis Summary.
-		rescueAnalysisSummary(verified, weeklyFood, animalName, dailyFood);
+		rescueAnalysisSummary(verified, animalName, dailyFood);
 	}// End of main
 
 	// Verify amount of dogs for the data in the array.
@@ -60,8 +58,7 @@ public class AnimalRescue
 	}// End of method
 
 	// Get info and validate for animal name, weight, and daily food into arrays. #2
-	public static void enterAnimalData(Scanner Input, String[] animalName, double[] weightLbs, double[] dailyFood,
-			double[] weeklyFood, String[] weightCategory)
+	public static void enterAnimalData(Scanner Input, String[] animalName, double[] weightLbs, double[] dailyFood)
 	{
 		System.out.println("\nAnimal Entry");
 
@@ -84,12 +81,12 @@ public class AnimalRescue
 			dailyFood[i] = validNum(Input, dailyFood[i]);
 
 			// We get the weight category and weekly food for each animal.
-			weightCategory[i] = getWeightCategory(weightLbs[i]);
-			weeklyFood[i] = getWeeklyFood(dailyFood[i]);
+			String weightCategory = getWeightCategory(weightLbs[i]);
+			double weeklyFood = getWeeklyFood(dailyFood[i]);
 
 			// We print the animal summary after getting all the information we need for
 			// that animal.
-			printSummary(animalName[i], weightLbs[i], weightCategory[i], dailyFood[i], weeklyFood[i]);
+			printSummary(animalName[i], weightLbs[i], weightCategory, dailyFood[i], weeklyFood);
 
 		}
 
@@ -172,13 +169,13 @@ public class AnimalRescue
 	 * displays the amount of animals, the total weekly food required, the average
 	 * daily food per animal, and animals at or above average for food amount.
 	 */
-	public static void rescueAnalysisSummary(int verified, double[] weeklyFood, String[] animalName, double[] dailyFood)
+	public static void rescueAnalysisSummary(int verified, String[] animalName, double[] dailyFood)
 	{
 		final int DAYS_WEEK = 7;
 		System.out.println("========== Rescue Analysis Summary ==========");
 		System.out.println("Number of animals: " + verified);
 
-		double totalFood = totalWeeklyFood(weeklyFood);
+		double totalFood = totalWeeklyFood(dailyFood);
 		System.out.printf("Total Weekly Food required: %.2f cups\n", totalFood);
 
 		double averageDailyFood = totalFood / DAYS_WEEK / verified;
@@ -193,12 +190,12 @@ public class AnimalRescue
 	 * For rescueAnalysisSummary method. Runs a for loop, that will run the
 	 * weeklyFood array and add all the weeklyFood input and return the total.
 	 */
-	public static double totalWeeklyFood(double[] weeklyFood)
+	public static double totalWeeklyFood(double[] dailyFood)
 	{
 		double adder = 0;
-		for (int i = 0; i < weeklyFood.length; i++)
+		for (int i = 0; i < dailyFood.length; i++)
 		{
-			adder = adder + weeklyFood[i];
+			adder = adder + dailyFood[i];
 		}
 		double totalFood = adder;
 		return totalFood;
