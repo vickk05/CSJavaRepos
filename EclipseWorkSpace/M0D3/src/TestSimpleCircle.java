@@ -23,16 +23,17 @@ public class TestSimpleCircle
 		// Create 3 rectangle objects that prints area and perimeter (length, width)
 		Rectangle[] rectangles = new Rectangle[3];
 
+		rectangles[0] = new Rectangle(1, 1);
 		System.out.println("\nThe area of rectangle1 is " + rectangles[0].getArea());
 		System.out.println("The perimeter of rectangle1 is " + rectangles[0].getPerimeter());
 
-		Rectangle rectangle2 = new Rectangle(5, 5);
-		System.out.println("The area of rectangle2 is " + rectangle2.getArea());
-		System.out.println("The perimeter of rectangle2 is " + rectangle2.getPerimeter());
+		rectangles[1] = new Rectangle(5, 5);
+		System.out.println("The area of rectangle2 is " + rectangles[1].getArea());
+		System.out.println("The perimeter of rectangle2 is " + rectangles[1].getPerimeter());
 
-		Rectangle rectangle3 = new Rectangle(25, 25);
-		System.out.println("The area of rectangle3 is " + rectangle3.getArea());
-		System.out.println("The perimeter of rectangle3 is " + rectangle3.getPerimeter());
+		rectangles[2] = new Rectangle(25, 25);
+		System.out.println("The area of rectangle3 is " + rectangles[2].getArea());
+		System.out.println("The perimeter of rectangle3 is " + rectangles[2].getPerimeter());
 
 	}
 }
@@ -84,7 +85,6 @@ class SimpleCircle
 // Created a new class
 class Rectangle
 {
-	rectangles[0]=new Rectangles(1,1);
 
 	// Attributes of the rectangle
 	private double length;
