@@ -21,9 +21,10 @@ public class TestSimpleCircle
 		System.out.println("The area of the circle of radius " + circle2.getRadius() + " is " + circle2.getArea());
 
 		// Create 3 rectangle objects that prints area and perimeter (length, width)
-		Rectangle rectangle1 = new Rectangle(1, 1);
-		System.out.println("\nThe area of rectangle1 is " + rectangle1.getArea());
-		System.out.println("The perimeter of rectangle1 is" + rectangle1.getPerimeter());
+		Rectangle[] rectangles = new Rectangle[3];
+
+		System.out.println("\nThe area of rectangle1 is " + rectangles[0].getArea());
+		System.out.println("The perimeter of rectangle1 is " + rectangles[0].getPerimeter());
 
 		Rectangle rectangle2 = new Rectangle(5, 5);
 		System.out.println("The area of rectangle2 is " + rectangle2.getArea());
@@ -39,6 +40,7 @@ public class TestSimpleCircle
 // Define the circle class with two constructors
 class SimpleCircle
 {
+
 	private double radius;
 
 	/** Construct a circle with radius 1 */
@@ -82,6 +84,7 @@ class SimpleCircle
 // Created a new class
 class Rectangle
 {
+	rectangles[0]=new Rectangles(1,1);
 
 	// Attributes of the rectangle
 	private double length;
