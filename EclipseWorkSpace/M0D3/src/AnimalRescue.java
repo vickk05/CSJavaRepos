@@ -41,7 +41,7 @@ public class AnimalRescue
 		enterAnimalData(Input, nameDogs, weightLbs, dailyFood, weeklyFood, weightCategory);
 
 		// We print the Analysis Summary.
-		rescueAnalysisSummary(verified, weeklyFood, dailyFood, nameDogs);
+		rescueAnalysisSummary(verified, weeklyFood, nameDogs, dailyFood);
 	}// End of main
 
 	// Verify amount of dogs for the data in the array.
@@ -146,7 +146,7 @@ public class AnimalRescue
 		System.out.printf("Weekly Food Amount: %.2f cups\n\n\n", weeklyFood);
 	}
 
-	public static void rescueAnalysisSummary(int verified, double[] weeklyFood, double[] dailyFood, String[] nameDogs)
+	public static void rescueAnalysisSummary(int verified, double[] weeklyFood, String[] nameDogs, double[] dailyFood)
 	{
 		final int DAYS_WEEK = 7;
 		System.out.println("========== Rescue Analysis Summary ==========");
@@ -159,14 +159,7 @@ public class AnimalRescue
 		System.out.printf("Average Daily food per animal: %.2f  cups\n", averageDailyFood);
 
 		System.out.println("Animals At or Above Average Daily Food Amount:");
-		for (int i = 0; i < weeklyFood.length; i++)
-		{
-			if (dailyFood[i] >= averageDailyFood)
-			{
-				System.out.printf("%s: %.2f cups\n", nameDogs[i], dailyFood[i]);
-			}
-
-		}
+		printAverageDailyFood(dailyFood, averageDailyFood, nameDogs);
 
 	}
 
@@ -181,7 +174,7 @@ public class AnimalRescue
 		return totalFood;
 	}
 
-	public static void averageDailyFood(double[] dailyFood, double averageDailyFood)
+	public static void printAverageDailyFood(double[] dailyFood, double averageDailyFood, String[] nameDogs)
 	{
 		for (int i = 0; i < dailyFood.length; i++)
 		{
