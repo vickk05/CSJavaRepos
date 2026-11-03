@@ -37,7 +37,7 @@ public class AnimalRescue
 
 		// We will call a method to put down all the dog information into the arrays.
 
-		enterAnimalData(Input, animalName, weightLbs, dailyFood);
+		enterAnimalData(animalName, weightLbs, dailyFood, Input);
 
 		// We print the Analysis Summary.
 		rescueAnalysisSummary(verified, animalName, dailyFood);
@@ -49,6 +49,7 @@ public class AnimalRescue
 
 		while (amountOfAnimals <= 0)
 		{
+			System.out.print("Error: Value must be greater than 0.");
 			System.out.print("Enter a postive whole number:\n");
 			amountOfAnimals = Input.nextInt();
 		}
@@ -57,8 +58,8 @@ public class AnimalRescue
 
 	}// End of method
 
-	// Get info and validate for animal name, weight, and daily food into arrays. #2
-	public static void enterAnimalData(Scanner Input, String[] animalName, double[] weightLbs, double[] dailyFood)
+	// Get info and validate for animal name, weight, and daily food into arrays.
+	public static void enterAnimalData(String[] animalName, double[] weightLbs, double[] dailyFood, Scanner Input)
 	{
 		System.out.println("\nAnimal Entry");
 
@@ -113,7 +114,7 @@ public class AnimalRescue
 
 	/*
 	 * For enterAnimalData method. We pass down the dailyFood for the index it is
-	 * currently on, and return that indexes weekly food. All we did here is
+	 * currently on, and return that animals weekly food. All we did here is
 	 * multiply the daily food by a week.
 	 */
 	public static double getWeeklyFood(double dailyFood)
@@ -187,15 +188,16 @@ public class AnimalRescue
 	}// End of method
 
 	/*
-	 * For rescueAnalysisSummary method. Runs a for loop, that will run the
-	 * weeklyFood array and add all the weeklyFood input and return the total.
+	 * For rescueAnalysisSummary method. Runs a for loop, inside thsi method we call
+	 * another method to get the weekly food. This will add all the weekly food
+	 * together.
 	 */
 	public static double totalWeeklyFood(double[] dailyFood)
 	{
 		double adder = 0;
 		for (int i = 0; i < dailyFood.length; i++)
 		{
-			adder = adder + dailyFood[i];
+			adder = adder + getWeeklyFood(dailyFood[i]);
 		}
 		double totalFood = adder;
 		return totalFood;
