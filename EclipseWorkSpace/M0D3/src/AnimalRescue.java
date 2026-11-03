@@ -38,7 +38,7 @@ public class AnimalRescue
 
 		// We will call a method to put down all the dog information into the arrays.
 
-		putInfo(Input, nameDogs, weightLbs, dailyFood, weeklyFood, weightCategory);
+		enterAnimalData(Input, nameDogs, weightLbs, dailyFood, weeklyFood, weightCategory);
 
 		// We print the Analysis Summary.
 		rescueAnalysisSummary(verified, weeklyFood, dailyFood, nameDogs);
@@ -59,7 +59,7 @@ public class AnimalRescue
 	}// End of method
 
 	// Get info and validate for animal name, weight, and daily food into arrays. #2
-	public static void putInfo(Scanner Input, String[] nameDogs, double[] weightLbs, double[] dailyFood,
+	public static void enterAnimalData(Scanner Input, String[] nameDogs, double[] weightLbs, double[] dailyFood,
 			double[] weeklyFood, String[] weightCategory)
 	{
 		System.out.println("\nAnimal Entry");
