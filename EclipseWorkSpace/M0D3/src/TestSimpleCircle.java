@@ -19,6 +19,12 @@ public class TestSimpleCircle
 		// Modify circle radius
 		circle2.setRadius(100); // or circle2.setRadius(100)
 		System.out.println("The area of the circle of radius " + circle2.getRadius() + " is " + circle2.getArea());
+
+		// Create 3 rectangle objects that prints area and perimeter (length, width)
+		Rectangle rectangle1 = new Rectangle(1, 1);
+		System.out.println("The area of rectangle1 is " + rectangle1.getArea());
+		System.out.println("The perimeter of rectangle1 is" + rectangle1.getPerimeter());
+
 	}
 }
 
