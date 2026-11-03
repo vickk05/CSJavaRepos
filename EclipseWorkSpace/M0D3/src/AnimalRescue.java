@@ -40,6 +40,7 @@ public class AnimalRescue
 
 		putInfo(Input, nameDogs, weightLbs, dailyFood, weeklyFood, weightCategory);
 
+		// We print the Analysis Summary.
 		rescueAnalysisSummary(verified, weeklyFood, dailyFood, nameDogs);
 	}// End of main
 
