@@ -8,17 +8,7 @@ public class AnimalRescue
 		Scanner Input = new Scanner(System.in);
 
 		// We print the overview of what the program will do.
-		System.out.println("**************************************\n" + "Animal Rescue Center Analysis\n"
-				+ "**************************************\n"
-				+ "The rescue employee enters the number of animals currently in the rescue.\n"
-				+ "For each animal, the employee enters:\n" + "- Name:\n" + "- Weight in pounds:\n"
-				+ "- Daily food amount in cups:\n" + "The program analyzes the animal information to:\n"
-				+ "- Calculate each animal's weekly food amount\n" + "- Categorize each animal by weight:\n"
-				+ "Small: less than 20 lbs\n" + "Medium: 20 to less than 50 lbs\n" + "Large: 50 to less than 100 lbs\n"
-				+ "Extra Large: 100 lbs or greater\n" + "- Calculate the average daily food amount for all animals\n"
-				+ "- Identify animals that eat at or above the average daily food amount\n"
-				+ "- Calculate the total amount of food needed for all animals for one week\n"
-				+ "The program displays each animal's information and a summary of the rescue's food needs.");
+		programOverView();
 
 		// Here we ask the user to enter the amount of animals for the array.
 		System.out.print("\nEnter the amount of animals: ");
@@ -42,6 +32,21 @@ public class AnimalRescue
 		// We print the Analysis Summary.
 		rescueAnalysisSummary(verified, animalName, dailyFood);
 	}// End of main
+
+	public static void programOverView()
+	{
+		System.out.println("**************************************\n" + "Animal Rescue Center Analysis\n"
+				+ "**************************************\n"
+				+ "The rescue employee enters the number of animals currently in the rescue.\n"
+				+ "For each animal, the employee enters:\n" + "- Name:\n" + "- Weight in pounds:\n"
+				+ "- Daily food amount in cups:\n" + "The program analyzes the animal information to:\n"
+				+ "- Calculate each animal's weekly food amount\n" + "- Categorize each animal by weight:\n"
+				+ "Small: less than 20 lbs\n" + "Medium: 20 to less than 50 lbs\n" + "Large: 50 to less than 100 lbs\n"
+				+ "Extra Large: 100 lbs or greater\n" + "- Calculate the average daily food amount for all animals\n"
+				+ "- Identify animals that eat at or above the average daily food amount\n"
+				+ "- Calculate the total amount of food needed for all animals for one week\n"
+				+ "The program displays each animal's information and a summary of the rescue's food needs.");
+	}
 
 	// Verify amount of dogs for the data in the array.
 	public static int verifyAmount(Scanner Input, int amountOfAnimals)
