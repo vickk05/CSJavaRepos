@@ -1,3 +1,6 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 public class DealerShipProject
@@ -5,8 +8,49 @@ public class DealerShipProject
 
 	public static void main(String[] args)
 	{
-		Scanner Input = new Scanner(System.in);
+		displayProgramSummary();
+		String fileName = "cars1.txt";
+		try
+		{
+			System.out.println("\nTesting file: " + fileName);
+			dealershipCars dealership = new dealershipCars("CS Dealership", 6);
+			dealershipSetUp(fileName, dealership);
+			dealership.displayCars();
+			System.out.println("\nMost Expensive Car:");
+			dealership.displayMostExpensiveCar();
+			String outputFileName = dealership.getDealershipName() + ".txt";
+			dealership.writeCarsToFile(outputFileName);
+		} catch (FileNotFoundException exception)
+		{
+			System.out.println("Error: Unable to find file " + fileName);
+		}
+		System.out.println("\nEnd of program");
+	}
 
+	public static void dealershipSetUp(String fileName, dealershipCars newDealership) throws FileNotFoundException
+	{
+		File inputFile = new File(fileName);
+		Scanner fileScanner = new Scanner(inputFile);
+		while (fileScanner.hasNext())
+		{
+			String make = fileScanner.next();
+			String model = fileScanner.next();
+			double price = fileScanner.nextDouble();
+			Car car = new Car(make, model, price);
+			newDealership.addCar(car);
+		}
+		fileScanner.close();
+	}
+
+	public static void displayProgramSummary()
+	{
+		System.out.println("**************************************");
+		System.out.println("Dealership and Car Analysis");
+		System.out.println("**************************************");
+		System.out.println("Reads car data from a file");
+		System.out.println("Displays all cars");
+		System.out.println("Finds most expensive car");
+		System.out.println();
 	}
 
 }// end of main
@@ -41,6 +85,11 @@ class Car
 	double getPrice()
 	{
 		return price;
+	}
+
+	void displayCarDetails()
+	{
+		System.out.println(make + " " + model + " $" + price);
 	}
 
 }// end of car class
@@ -95,6 +144,37 @@ class dealershipCars
 		}
 
 		return mostExpensive;
+	}
+
+	void displayMostExpensiveCar()
+	{
+		Car mostExpensive = findMostExpensiveCar();
+
+		if (mostExpensive != null)
+		{
+			mostExpensive.displayCarDetails();
+		}
+	}
+
+	void displayCars()
+	{
+		for (int i = 0; i < currentNumberCars; i++)
+		{
+			cars[i].displayCarDetails();
+		}
+	}
+
+	void writeCarsToFile(String filename)
+	{
+		PrintWriter output = new PrintWriter(filename);
+
+		for (int i = 0; i < currentNumberCars; i++)
+		{
+			output.println(cars[i].getMake() + " " + cars[i].getModel() + " " + cars[i].getPrice());
+
+		}
+
+		output.close();
 	}
 
 }
