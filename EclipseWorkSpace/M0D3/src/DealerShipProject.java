@@ -85,8 +85,8 @@ class dealershipCars
 
 		Car mostExpensive = cars[0];
 
-		for (int i; i < currentNumberCars; i++)
-			;
+		for (int i = 1; i < currentNumberCars; i++)
+
 		{
 			if (cars[i].getPrice() > mostExpensive.getPrice())
 			{
