@@ -57,12 +57,44 @@ class dealershipCars
 	dealershipCars(String name, int maxNumCars)
 	{
 		this.name = name;
+		cars = new Car[maxNumCars];
+		currentNumberCars = 0;
 
 	}
 
-	getDealershipName()
+	String getDealershipName()
 	{
-		return dealershipName;
+		return name;
+	}
+
+	void addCar(Car newCar)
+	{
+		if (currentNumberCars < cars.length)
+		{
+			cars[currentNumberCars] = newCar;
+			currentNumberCars++;
+		}
+	}
+
+	Car findMostExpensiveCar()
+	{
+		if (currentNumberCars == 0)
+		{
+			return null;
+		}
+
+		Car mostExpensive = cars[0];
+
+		for (int i; i < currentNumberCars; i++)
+			;
+		{
+			if (cars[i].getPrice() > mostExpensive.getPrice())
+			{
+				mostExpensive = cars[i];
+			}
+		}
+
+		return mostExpensive;
 	}
 
 }
