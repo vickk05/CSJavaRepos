@@ -9,7 +9,7 @@ public class dealerShipProject2
 	public static void main(String[] args)
 	{
 		displayProgramSummary();
-		String fileName = "cars2.txt";
+		String fileName = "cars1.txt";
 		try
 		{
 			System.out.println("\nTesting file: " + fileName);
@@ -108,6 +108,7 @@ class dealershipCars
 	{
 
 		this.name = name;
+		this.maxNumCars = maxNumCars;
 		cars = new Car[maxNumCars];
 		currentNumberCars = 0;
 	}
@@ -129,11 +130,26 @@ class dealershipCars
 
 	public void displayMostExpensiveCar()
 	{
+		Car mostExpensiveCar = cars[0];
+
+		for (int i = 1; i < cars.length; i++)
+		{
+			if (mostExpensiveCar.getPrice() < cars[i].getPrice())
+			{
+				mostExpensiveCar = cars[i];
+			}
+		}
+
+		mostExpensiveCar.displayCarDetails();
 
 	}
 
 	void displayCars()
 	{
+		for (int i = 0; i < currentNumberCars; i++)
+		{
+			cars[i].displayCarDetails();
+		}
 
 	}
 
