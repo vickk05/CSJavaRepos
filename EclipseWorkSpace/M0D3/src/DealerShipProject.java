@@ -164,7 +164,7 @@ class dealershipCars
 		}
 	}
 
-	void writeCarsToFile(String filename)
+	void writeCarsToFile(String filename) throws FileNotFoundException
 	{
 		PrintWriter output = new PrintWriter(filename);
 
