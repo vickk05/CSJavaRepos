@@ -97,18 +97,19 @@ class Car
 class dealershipCars
 {
 
-	// attributes
+	// Attributes
 	private String name;
 	private Car[] cars;
 	private int currentNumberCars;
+	private int maxNumCars;
 
-	// constructor
+	// Constructor
 	dealershipCars(String name, int maxNumCars)
 	{
+
 		this.name = name;
 		cars = new Car[maxNumCars];
 		currentNumberCars = 0;
-
 	}
 
 	String getDealershipName()
@@ -118,50 +119,22 @@ class dealershipCars
 
 	void addCar(Car newCar)
 	{
-		if (currentNumberCars < cars.length)
+		if (currentNumberCars < maxNumCars)
 		{
 			cars[currentNumberCars] = newCar;
 			currentNumberCars++;
 		}
+
 	}
 
-	Car findMostExpensiveCar()
+	public void displayMostExpensiveCar()
 	{
-		if (currentNumberCars == 0)
-		{
-			return null;
-		}
 
-		Car mostExpensive = cars[0];
-
-		for (int i = 1; i < currentNumberCars; i++)
-
-		{
-			if (cars[i].getPrice() > mostExpensive.getPrice())
-			{
-				mostExpensive = cars[i];
-			}
-		}
-
-		return mostExpensive;
-	}
-
-	void displayMostExpensiveCar()
-	{
-		Car mostExpensive = findMostExpensiveCar();
-
-		if (mostExpensive != null)
-		{
-			mostExpensive.displayCarDetails();
-		}
 	}
 
 	void displayCars()
 	{
-		for (int i = 0; i < currentNumberCars; i++)
-		{
-			cars[i].displayCarDetails();
-		}
+
 	}
 
 	void writeCarsToFile(String outputFileName) throws FileNotFoundException
